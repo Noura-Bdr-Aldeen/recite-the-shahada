@@ -1,5 +1,5 @@
 import { Image } from "react-bootstrap"
-import image from "../images/listening.png"
+import image from "../../images/listening.png"
 
 function Listening ()  {
   return (
