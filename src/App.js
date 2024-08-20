@@ -2,13 +2,16 @@ import { Button } from 'react-bootstrap';
 import './App.css';
 import NavApp from './components/navbar/NavApp';
 import { createContext, useState } from 'react';
-import Listening from "../src/components/listening/Listening"
-import Talk from './components/talk/Talk';
+import Talking from './components/talk/Talking';
+import Listening from './components/listening/Listening';
+import GetCertificate from './components/getcertificate/GetCertificate';
+import Wrong from './components/wrong/Wrong';
+import TalkingEnglish from "./components/talk/TalkingEnglish"
 export const ThemeContext = createContext(null)
 
 
 function App() {
-  //state for dark and light
+  //state to store theme
 const [theme , setTheme] =useState("light")
 const toggleTheme =() =>{
   setTheme((curr) =>(curr === "light" ? "dark" : "light"))
@@ -17,9 +20,13 @@ const toggleTheme =() =>{
     <ThemeContext.Provider value={{theme ,toggleTheme}}>
     <div className="App" id={theme}>
       <NavApp/>
-      <Button onClick={toggleTheme}>{theme}</Button>
+      {/* this button to switch between dark and light */}
+      <Button onClick={toggleTheme} className='m-2'>{theme}</Button>
+      <Talking/>
       <Listening/>
-      <Talk/>
+      <TalkingEnglish/>
+      <Wrong/>
+      <GetCertificate/>
     </div>
     </ThemeContext.Provider>
   );
