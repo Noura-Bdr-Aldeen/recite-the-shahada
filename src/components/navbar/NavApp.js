@@ -8,6 +8,7 @@ import { ThemeContext } from '../../App';
 import "./NavApp.css"
 
 function NavApp(){
+   //state managment context api
   const { theme } = useContext(ThemeContext);
  return (
   <>

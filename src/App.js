@@ -8,6 +8,7 @@ export const ThemeContext = createContext(null)
 
 
 function App() {
+  //state for dark and light
 const [theme , setTheme] =useState("light")
 const toggleTheme =() =>{
   setTheme((curr) =>(curr === "light" ? "dark" : "light"))
